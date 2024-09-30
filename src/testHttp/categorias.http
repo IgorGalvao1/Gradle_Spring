@@ -1,0 +1,13 @@
+@url = https://8080-igorgalvao1-gradlesprin-8ax23k8ea2p.ws-us116.gitpod.io
+
+###
+
+GET {{url}}/categorias
+
+###
+POST {{url}}/categorias
+Content-Type: application/json
+
+{
+    "nome": "Arquitetura de APIs"
+}

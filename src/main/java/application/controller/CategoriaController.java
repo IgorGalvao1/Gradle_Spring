@@ -8,22 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import application.repository.CategoriaRepository;
+import application.service.CategoriaService;
 import application.model.Categoria;
 
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
     @Autowired
-    CategoriaRepository categoriaRepo;
+    CategoriaService categoriaService;
 
     @GetMapping
     public Iterable<Categoria> findAll() {
-        return categoriaRepo.findAll();
+        return categoriaService.findAll();
     
     }
 
     @PostMapping
     public Categoria insert(@RequestBody Categoria categoria) {
-        return categoriaRepo.save(categoria);
+        return categoriaService.insert(categoria);
     }
 }
